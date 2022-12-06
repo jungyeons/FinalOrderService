@@ -1,7 +1,6 @@
 server:
   port: 0
 
-
 spring:
   application:
     name: order-service
@@ -22,10 +21,12 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
-    instance:
-      instance-id: ${spring.application.name}:${spring.application.instance_id${random.value}}
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
-  logging:
-    level:
-      com.example.com.example.ordermicroservice : DEBUG
+logging:
+  level:
+    com.example.ordermicroservice : DEBUG
 

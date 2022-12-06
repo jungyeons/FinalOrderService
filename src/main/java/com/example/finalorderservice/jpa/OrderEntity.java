@@ -9,11 +9,11 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name="Order")
+@Table(name="orders")
 public class OrderEntity implements Serializable {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
 
     @Column(nullable = false, length = 120)
     private String productId;
@@ -31,6 +31,6 @@ public class OrderEntity implements Serializable {
 
     @Column(nullable = false, updatable = false, insertable = false)
     @ColumnDefault(value="CURRENT_TIMESTAMP")
-    private Date createAt;
+    private Date createdAt;
 }
 
